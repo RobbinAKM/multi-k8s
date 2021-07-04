@@ -11,7 +11,7 @@ after_success:
   - docker build -t robbinakm/nginx ./nginx
   - docker build -t robbinakm/server ./server
   - docker build -t robbinakm/worker ./worker
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password--stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push robbinakm/client
   - docker push robbinakm/nginx
   - docker push robbinakm/server
