@@ -12,7 +12,7 @@ after_success:
   - docker build -t server ./server
   - docker build -t worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password--stdin
-  - docker push client
-  - docker push nginx
-  - docker push server
-  - docker push worker
+  - docker push robbinakm/client
+  - docker push robbinakm/nginx
+  - docker push robbinakm/server
+  - docker push robbinakm/worker
