@@ -7,10 +7,10 @@ before_install:
 script:
   - docker run -e CI=true myimage npm run test
 after_success:
-  - docker build -t client ./client
-  - docker build -t nginx ./nginx
-  - docker build -t server ./server
-  - docker build -t worker ./worker
+  - docker build -t robbinakm/client ./client
+  - docker build -t robbinakm/nginx ./nginx
+  - docker build -t robbinakm/server ./server
+  - docker build -t robbinakm/worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password--stdin
   - docker push robbinakm/client
   - docker push robbinakm/nginx
