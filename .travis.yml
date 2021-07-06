@@ -16,3 +16,14 @@ after_success:
   - docker push robbinakm/nginx
   - docker push robbinakm/server
   - docker push robbinakm/worker
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  region: "us-east-1"
+  app: "MyWebApp"
+  env: "Mywebapp-env"
+  bucket_name: "elasticbeanstalk-us-east-1-050353724204"
+  backet_path: "multi-docker"
+  on:
+    branch: master
